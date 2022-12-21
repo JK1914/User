@@ -73,4 +73,17 @@ class MyUserController extends Controller
             }
         }                      
     } 
+
+    public function login(Request $request){
+        $user = MyUser::where([
+            ['login', $request->login],
+            ['password', $request->password]
+        ])->first();
+        if(!empty($user)){
+            return $user;
+        }
+        else{
+            throw new NotFoundException();
+        }
+    }
 }

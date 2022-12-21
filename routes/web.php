@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 Route::post('user/create', [MyUserController::class, 'create']);
 Route::get('users', [MyUserController::class, 'list']);
+Route::get('login', [MyUserController::class, 'login']);
 Route::get('user/{id}', [MyUserController::class, 'item']);
 Route::put('user/{id}', [MyUserController::class, 'update']);
 Route::delete('user/{id}', [MyUserController::class, 'delete']);
